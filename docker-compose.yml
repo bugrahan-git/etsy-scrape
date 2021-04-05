@@ -24,7 +24,7 @@ services:
       - "8000:8000"
   db_migrate:
     image: etsy-scraper:latest
-    command: python src/manage.py migrate
+    command: sh -c "/wait && python src/manage.py migrate"
     volumes:
       - .:/app
     environment: *app-variables
