@@ -1,0 +1,36 @@
+version: '3.9'
+
+x-db-variables: &db-variables
+  POSTGRES_DB: postgres
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+
+x-app-variables: &app-variables
+  <<: *db-variables
+  POSTGRES_HOST: postgres
+
+services:
+  app:
+    build: .
+    image: etsy-scraper:latest 
+    command: python src/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    environment: *app-variables
+    depends_on:
+      - db_migrate
+    ports:
+      - "8000:8000"
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment: *db-variables
+  db_migrate:
+    image: etsy-scraper:latest
+    command: python src/manage.py migrate
+    volumes:
+      - .:/app
+    environment: *app-variables
+    depends_on:
+      - postgres
