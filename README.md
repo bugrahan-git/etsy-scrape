@@ -4,6 +4,8 @@
 
 Web applicaton to scrape product price/image/name from Etsy.com
 
+<img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="python" width="50" height="50"/> <img src="https://www.vectorlogo.zone/logos/djangoproject/djangoproject-icon.svg" alt="django" width="50" height="50"/> <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg" alt="bootstrap" width="50" height="50"/> <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="postgresql" width="50" height="50"/> <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="html" width="50" height="50"/>
+
 ### Installation
 * ` docker-compose build `
 * ` docker-compose up `
