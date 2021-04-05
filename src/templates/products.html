@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title_base %}
+    Products
+{% endblock %}
+
+{% block body_base %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+            <tr>
+                <th scope="row"><a href="{{ product.get_abs_url }}">{{ product.id }}</a></th>
+                <td><a href="{{ product.get_abs_url }}">{{ product.name }}</a></td>
+                <td>{{ product.price }}</td>
+                <td><a href="{{ product.url }}">{{ product.url }}</a></td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+{% endblock %}

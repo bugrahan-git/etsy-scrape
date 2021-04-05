@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title_base %}
+    Etsy Scraper
+{% endblock %}
+
+{% block body_base %}
+
+    <div class="container">
+        <div class="col-md-6">
+            <form class="box" method="POST">
+                {% csrf_token %}
+                <input type="text" name="etsy_url" autocomplete="off" placeholder="Enter an Etsy link to scrape...">
+                <input type="submit" name="scrape" value="Scrape">
+                <p style="color: mediumblue; font-weight: bold;">{{ status_message }}</p>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

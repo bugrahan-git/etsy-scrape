@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title_base %}
+
+        {% endblock %}
+
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark navbar-fixed-top">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <img src="{% static 'img/home-icon.png' %}" width="30px" height="30px" alt="home-icon">
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item active">
+                <img src="{% static 'img/box-icon.png' %}" width="30px" height="30px" alt="box-icon">
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/products">Products</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 ml-auto" method="GET">
+            <input class="form-control" type="search" name = "search" autocomplete="off" placeholder="Search by ID" aria-label="Search" value="{{ searched }}">
+            <input class="btn-primary btn-md my-2 my-sm-0 ml-3 navbar-btn" type="submit" name="search_submit" value="Search">
+        </form>
+    </nav>
+
+    {% block body_base %}
+
+    {% endblock %}
+</body>
+</html>
