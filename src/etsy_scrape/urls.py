@@ -16,7 +16,7 @@ Including another URLconf
 #from django.contrib import admin
 from django.urls import path, include
 from scrape.views import home_view
-from products.views import products_view
+from products.views import *
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
