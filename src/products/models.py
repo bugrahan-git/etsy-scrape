@@ -11,3 +11,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_abs_url(self):
+        return "/product/{}".format(self.id)
