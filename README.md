@@ -9,6 +9,7 @@ Web applicaton to scrape product price/image/name from Etsy.com
 ### Installation
 * ` docker-compose build `
 * ` docker-compose up `
+* Visit `localhost:8000`
 
 
 ### Screenshots
